@@ -1,1 +1,0 @@
-../../../../HEREMapsStarter/framework/NMAKit.framework/Headers/NMAExtendedAttribute.h

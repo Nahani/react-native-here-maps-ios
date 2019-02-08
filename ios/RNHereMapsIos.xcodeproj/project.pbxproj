@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		107ADF5D2203669C00A46D59 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 107ADF5C2203669C00A46D59 /* MapView.m */; };
-		3B24484EFDA86DB3EC55DF45 /* libPods-RNHereMapsIos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AAAFA2413F02B0AE9410BF /* libPods-RNHereMapsIos.a */; };
 		B3E7B58A1CC2AC0600A0062D /* RNHereMapsIos.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNHereMapsIos.m */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		107ADF5C2203669C00A46D59 /* MapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNHereMapsIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNHereMapsIos.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		36EACD80541C5FFFFD6D4D9E /* Pods-RNHereMapsIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHereMapsIos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNHereMapsIos/Pods-RNHereMapsIos.debug.xcconfig"; sourceTree = "<group>"; };
-		8101F6CBA2DE30D00DE4A435 /* Pods-RNHereMapsIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHereMapsIos.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNHereMapsIos/Pods-RNHereMapsIos.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNHereMapsIos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHereMapsIos.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNHereMapsIos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHereMapsIos.m; sourceTree = "<group>"; };
-		D1AAAFA2413F02B0AE9410BF /* libPods-RNHereMapsIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNHereMapsIos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,22 +33,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B24484EFDA86DB3EC55DF45 /* libPods-RNHereMapsIos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BD29DEAD82EEB75397DB750 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				36EACD80541C5FFFFD6D4D9E /* Pods-RNHereMapsIos.debug.xcconfig */,
-				8101F6CBA2DE30D00DE4A435 /* Pods-RNHereMapsIos.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,23 +47,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		25D26786F77355E715415B6F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D1AAAFA2413F02B0AE9410BF /* libPods-RNHereMapsIos.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				107ADF5C2203669C00A46D59 /* MapView.m */,
 				B3E7B5881CC2AC0600A0062D /* RNHereMapsIos.h */,
 				B3E7B5891CC2AC0600A0062D /* RNHereMapsIos.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				0BD29DEAD82EEB75397DB750 /* Pods */,
-				25D26786F77355E715415B6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,7 +63,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNHereMapsIos" */;
 			buildPhases = (
-				2751C92D4495E34BCD337E60 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -135,38 +107,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2751C92D4495E34BCD337E60 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNHereMapsIos-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* RNHereMapsIos.m in Sources */,
-				107ADF5D2203669C00A46D59 /* MapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +214,9 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36EACD80541C5FFFFD6D4D9E /* Pods-RNHereMapsIos.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
+				"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
@@ -285,7 +230,6 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8101F6CBA2DE30D00DE4A435 /* Pods-RNHereMapsIos.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

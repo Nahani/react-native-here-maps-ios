@@ -1,1 +1,0 @@
-../../../../HEREMapsStarter/framework/NMAKit.framework/Headers/NMARatings.h
