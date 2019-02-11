@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2011-2018 HERE Global B.V. and its affiliate(s).
+ * All rights reserved.
+ * The use of this software is conditional upon having a separate agreement
+ * with a HERE company for the use or utilization of this software. In the
+ * absence of such agreement, the use of the software is not allowed.
+ */
+
+#ifndef HelloMap_PrefixHeader_pch
+#define HelloMap_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <NMAKit/NMAKit.h>
+
+#endif
