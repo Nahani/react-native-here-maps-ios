@@ -1,7 +1,4 @@
-import { NativeModules } from 'react-native';
+import { requireNativeComponent } from 'react-native';
 
-const { RNHereMapsIos } = NativeModules;
-
-RNHereMapsIos.addEvent('Birthday Party', '4 Privet Drive, Surrey');
-
-export default RNHereMapsIos;
+// requireNativeComponent automatically resolves 'RNTMap' to 'RNTMapManager'
+module.exports = requireNativeComponent('RNTMap', null);

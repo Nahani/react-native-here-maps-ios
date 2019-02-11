@@ -4,6 +4,6 @@
 #import "RCTBridgeModule.h"
 #endif
 
-@interface RNHereMapsIos : NSObject <RCTBridgeModule>
+@interface RNTMapManager : NSObject <RCTBridgeModule>
 
 @end
