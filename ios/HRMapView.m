@@ -19,25 +19,41 @@
 
 @implementation HRMapView
 
+
+- (void)setMapCenter:(NSDictionary *)mapCenter
+{
+    RCTLogInfo(@"Set center map to %f and %f", [[mapCenter objectForKey:(@"latitude")] doubleValue], [[mapCenter objectForKey:(@"longitude")] doubleValue]);
+    
+    if (![mapCenter isEqual:_mapCenter]) {
+        _mapCenter = [mapCenter copy];
+        NMAGeoCoordinates* coord = [[NMAGeoCoordinates alloc]
+                                    initWithLatitude: [[mapCenter objectForKey:(@"latitude")] doubleValue]
+                                    longitude:[[mapCenter objectForKey:(@"longitude")] doubleValue]];
+        [_mapView setGeoCenter:coord
+                     zoomLevel:NMAMapViewPreserveValue
+                 withAnimation:NMAMapAnimationNone];
+    }
+}
+
+
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
 {
     if ((self = [super init])) {
         // Do any additional setup after loading the view, typically from a nib.
         //set geo center
         
-        RCTLogInfo(@"Blaba balab lalalal");
         
-        self.mapView = [[NMAMapView alloc] init];
+        _mapView = [[NMAMapView alloc] init];
         
         NMAGeoCoordinates *geoCoordCenter =
-        [[NMAGeoCoordinates alloc] initWithLatitude:43.7310944 longitude:7.4273204];
-        [self.mapView setGeoCenter:geoCoordCenter withAnimation:NMAMapAnimationNone];
-        self.mapView.copyrightLogoPosition = NMALayoutPositionBottomCenter;
+        [[NMAGeoCoordinates alloc] initWithLatitude:49.260327 longitude:-123.115025];
+        [_mapView setGeoCenter:geoCoordCenter withAnimation:NMAMapAnimationNone];
+        _mapView.copyrightLogoPosition = NMALayoutPositionBottomCenter;
         
         //set zoom level
-        self.mapView.zoomLevel = 13.2;
-        
-        
+        _mapView.zoomLevel = 13.2;
+       
+       
         
         
     }
@@ -53,5 +69,4 @@
 }
 
 @end
-
 

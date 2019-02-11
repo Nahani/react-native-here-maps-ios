@@ -22,6 +22,6 @@ RCT_EXPORT_MODULE()
     return [[HRMapView alloc] initWithEventDispatcher:self.bridge.eventDispatcher];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(center, BOOL);
+RCT_EXPORT_VIEW_PROPERTY(mapCenter, NSDictionary);
 
 @end

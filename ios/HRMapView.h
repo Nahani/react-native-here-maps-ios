@@ -7,7 +7,6 @@
 //
 
 #import "React/RCTEventDispatcher.h"
-#import <NMAKit/NMAMapScheme.h>
 #import "React/RCTView.h"
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
@@ -18,6 +17,7 @@
 @interface HRMapView : UIView
 
 @property (strong, nonatomic) IBOutlet NMAMapView *mapView;
+@property (nonatomic, strong) NSDictionary *mapCenter;
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher NS_DESIGNATED_INITIALIZER;
 
