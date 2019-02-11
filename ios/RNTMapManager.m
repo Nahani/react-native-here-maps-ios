@@ -10,7 +10,7 @@
 @implementation RNTMapManager
 
 RCT_EXPORT_MODULE()
-
+@synthesize bridge = _bridge;
 
 - (UIView *)view
 {    
@@ -18,16 +18,10 @@ RCT_EXPORT_MODULE()
     [NMAApplicationContext setAppId:@"0p2Xc0nzndhBi7OwUKeQ"
                             appCode:@"wOeyyp6FqqEoHjmybx5wHw"];
     
-    NMAMapView *mapView= [[NMAMapView alloc] init];
     
-    NMAGeoCoordinates *geoCoordCenter =
-    [[NMAGeoCoordinates alloc] initWithLatitude:43.7310944 longitude:7.4273204];
-    [mapView setGeoCenter:geoCoordCenter withAnimation:NMAMapAnimationNone];
-    mapView.copyrightLogoPosition = NMALayoutPositionBottomCenter;
-    //set zoom level
-    mapView.zoomLevel = 13.2;
-    
-    return mapView;
+    return [[HRMapView alloc] initWithEventDispatcher:self.bridge.eventDispatcher];
 }
+
+RCT_EXPORT_VIEW_PROPERTY(center, BOOL);
 
 @end
