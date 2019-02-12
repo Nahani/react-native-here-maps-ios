@@ -23,5 +23,6 @@ RCT_EXPORT_MODULE()
 }
 
 RCT_EXPORT_VIEW_PROPERTY(mapCenter, NSDictionary);
+RCT_EXPORT_VIEW_PROPERTY(markersList, NSArray);
 
 @end

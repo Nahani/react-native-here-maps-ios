@@ -17,12 +17,16 @@
 
 @end
 
-@implementation HRMapView
+@implementation HRMapView {
+    
+    RCTEventDispatcher *_eventDispatcher;
+    
+}
 
 
 - (void)setMapCenter:(NSDictionary *)mapCenter
 {
-    RCTLogInfo(@"Set center map to %f and %f", [[mapCenter objectForKey:(@"latitude")] doubleValue], [[mapCenter objectForKey:(@"longitude")] doubleValue]);
+    RCTLogInfo(@"Set center map to %f,%f", [[mapCenter objectForKey:(@"latitude")] doubleValue], [[mapCenter objectForKey:(@"longitude")] doubleValue]);
     
     if (![mapCenter isEqual:_mapCenter]) {
         _mapCenter = [mapCenter copy];
@@ -35,6 +39,30 @@
     }
 }
 
+- (void)setMarkersList:(NSArray *)markersList
+{
+    RCTLogInfo(@"Set markers List");
+    for (id marker in markersList) {
+        RCTLogInfo(@"Set marker on map to %f,%f", [[marker objectForKey:(@"latitude")] doubleValue], [[marker objectForKey:(@"longitude")] doubleValue]);
+        
+        // Add the marker on the map
+        NMAMapMarker *positionMarker =
+        [NMAMapMarker
+         mapMarkerWithGeoCoordinates:[NMAGeoCoordinates
+                geoCoordinatesWithLatitude:[[marker objectForKey:(@"latitude")] doubleValue]
+                longitude:[[marker objectForKey:(@"longitude")] doubleValue]]
+                image:[UIImage imageNamed:@"marker"]];
+        
+        [positionMarker setAnchorOffset: CGPointMake(00.0, -35.0)];
+        [positionMarker setTitle:[marker objectForKey:(@"title")]];
+        [positionMarker setTextDescription:[marker objectForKey:(@"description")]];
+        
+        
+        [_mapView addMapObject:positionMarker];
+        
+    }
+}
+
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
 {
@@ -42,23 +70,29 @@
         // Do any additional setup after loading the view, typically from a nib.
         //set geo center
         
-        
+        _eventDispatcher = eventDispatcher;
         _mapView = [[NMAMapView alloc] init];
         
         NMAGeoCoordinates *geoCoordCenter =
         [[NMAGeoCoordinates alloc] initWithLatitude:49.260327 longitude:-123.115025];
         [_mapView setGeoCenter:geoCoordCenter withAnimation:NMAMapAnimationNone];
         _mapView.copyrightLogoPosition = NMALayoutPositionBottomCenter;
-        
         //set zoom level
-        _mapView.zoomLevel = 13.2;
-       
-       
+        _mapView.zoomLevel = 15;
+        
+        //Allow to use didSelectObjects to detect when we click on a marker
+        self.mapView.delegate = self;
         
         
     }
     
     return self;
+}
+
+-(void)mapView:(NMAMapView *)mapView didSelectObjects:(NSArray *)objects {
+    RCTLogInfo(@"TAP on marker !");
+    NMAMapMarker *mapMarker = (NMAMapMarker *) objects.firstObject;
+    [mapMarker showInfoBubble];
 }
 
 - (void)layoutSubviews
