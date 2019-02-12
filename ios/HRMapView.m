@@ -53,7 +53,6 @@
                 longitude:[[marker objectForKey:(@"longitude")] doubleValue]]
                 image:[UIImage imageNamed:@"marker"]];
         
-        [positionMarker setAnchorOffset: CGPointMake(00.0, -35.0)];
         [positionMarker setTitle:[marker objectForKey:(@"title")]];
         [positionMarker setTextDescription:[marker objectForKey:(@"description")]];
         
@@ -78,7 +77,7 @@
         [_mapView setGeoCenter:geoCoordCenter withAnimation:NMAMapAnimationNone];
         _mapView.copyrightLogoPosition = NMALayoutPositionBottomCenter;
         //set zoom level
-        _mapView.zoomLevel = 15;
+        _mapView.zoomLevel = 13;
         
         //Allow to use didSelectObjects to detect when we click on a marker
         self.mapView.delegate = self;
