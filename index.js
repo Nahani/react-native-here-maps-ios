@@ -11,6 +11,7 @@ class MainRNTMap extends React.Component{
     static propTypes = {
         mapCenter: PropTypes.objectOf,
         markersList: PropTypes.objectOf,
+        initialZoom: PropTypes.objectOf,
     }
 
  
