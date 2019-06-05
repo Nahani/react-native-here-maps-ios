@@ -39,6 +39,13 @@
     }
 }
 
+- (void)setInitialZoom:(float)initialZoom
+{
+    RCTLogInfo(@"Set initial zoom map to %f", initialZoom);
+    
+    self.mapView.zoomLevel = initialZoom;
+}
+
 - (void)setMarkersList:(NSArray *)markersList
 {
     RCTLogInfo(@"Set markers List");
@@ -102,4 +109,3 @@
 }
 
 @end
-
