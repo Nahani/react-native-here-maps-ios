@@ -76,7 +76,9 @@
                 image:[UIImage imageNamed:@"marker"]];
         
         [positionMarker setTitle:[marker objectForKey:(@"title")]];
-        [positionMarker setTextDescription:[marker objectForKey:(@"description")]];
+        if ( [marker objectForKey:(@"description")] != (id)[NSNull null] ) {
+            [positionMarker setTextDescription:[marker objectForKey:(@"description")]];
+        }
         
         
         [_mapView addMapObject:positionMarker];
