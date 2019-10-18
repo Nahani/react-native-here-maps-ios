@@ -8,6 +8,25 @@
 
 `$ react-native link react-native-here-maps-ios`
 
+## Usage
+```javascript
+import RNHereMapsIos from 'react-native-here-maps-ios';
+
+<RNHereMapsIos
+  style={{ flex: 1 }}
+  mapCenter={{
+    latitude: 40.89962,
+    longitude: 29.22657
+  }}
+  markersList={[
+    {
+      latitude: 40.89962,
+      longitude: 29.22657
+    }
+  ]}
+/>
+```
+
 ### Manual installation
 
 
@@ -17,6 +36,18 @@
 2. Go to `node_modules` ➜ `react-native-here-maps-ios` and add `RNHereMapsIos.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNHereMapsIos.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
+5. Add the following lines to the ios/Podfile file.
+
+```POD
+
+## add line
+pod 'HEREMapsStarter'
+
+and install
+
+> pod install
+```
+
 
 #### Android
 
@@ -40,13 +71,4 @@
 2. Open up your `MainPage.cs` app
   - Add `using Here.Maps.Ios.RNHereMapsIos;` to the usings at the top of the file
   - Add `new RNHereMapsIosPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
-
-## Usage
-```javascript
-import RNHereMapsIos from 'react-native-here-maps-ios';
-
-// TODO: What to do with the module?
-RNHereMapsIos;
-```
   
