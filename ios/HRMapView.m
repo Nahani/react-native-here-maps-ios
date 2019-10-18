@@ -73,7 +73,7 @@
          mapMarkerWithGeoCoordinates:[NMAGeoCoordinates
                 geoCoordinatesWithLatitude:[[marker objectForKey:(@"latitude")] doubleValue]
                 longitude:[[marker objectForKey:(@"longitude")] doubleValue]]
-                image:[UIImage imageNamed:@"marker"]];
+                image:[UIImage imageNamed:[marker objectForKey:(@"marker")] ?:@"marker"]];
         
         [positionMarker setTitle:[marker objectForKey:(@"title")]];
         if ( [marker objectForKey:(@"description")] != (id)[NSNull null] ) {
