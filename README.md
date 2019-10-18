@@ -36,11 +36,18 @@ import RNHereMapsIos from 'react-native-here-maps-ios';
 2. Go to `node_modules` ➜ `react-native-here-maps-ios` and add `RNHereMapsIos.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNHereMapsIos.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
-5. Add the following lines to the pod file.
+5. Add the following lines to the ios/Podfile file.
 
 ```POD
+
+## add line
 pod 'HEREMapsStarter'
+
+and install
+
+> pod install
 ```
+
 
 #### Android
 
